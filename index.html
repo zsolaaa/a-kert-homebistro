@@ -527,6 +527,61 @@ nav.scrolled {
 }
 } /* end hover media query */
 
+/* ─── CHEF QUOTE ─── */
+#chef-quote {
+  background: var(--cream-warm);
+  padding: 80px 80px;
+  display: flex;
+  justify-content: center;
+}
+.chef-quote-inner {
+  max-width: 720px;
+  text-align: center;
+}
+.chef-quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  line-height: 0.5;
+  color: var(--gold);
+  opacity: 0.45;
+  display: block;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+.chef-quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.chef-quote-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.chef-quote-author::before,
+.chef-quote-author::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+.chef-quote-name {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+@media (max-width: 640px) {
+  #chef-quote { padding: 56px 24px; }
+}
+
 /* ─── FOGLALÁS ─── */
 #foglal {
   background: var(--cream-warm);
@@ -939,6 +994,17 @@ footer {
     <div class="ethos-num" data-target="3">03</div>
     <h3 class="ethos-title">Meleg vendégszeretet</h3>
     <p class="ethos-text">Nem vendégforgalmat szeretnénk, hanem visszatérő törzsvendégeket — olyanokat, akikre már várunk.</p>
+  </div>
+</section>
+
+<!-- CHEF QUOTE -->
+<section id="chef-quote">
+  <div class="chef-quote-inner reveal">
+    <span class="chef-quote-mark">"</span>
+    <p class="chef-quote-text">A vendéglátás nálam figyelem, tisztelet és valódi élmény. Az ételeimben az alapanyagok tisztasága és az ízek egyensúlya kap főszerepet.</p>
+    <div class="chef-quote-author">
+      <span class="chef-quote-name">Somogyi Máté</span>
+    </div>
   </div>
 </section>
 
