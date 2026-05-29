@@ -74,7 +74,7 @@ nav.scrolled {
   text-transform: uppercase;
   color: oklch(90% 0.01 75);
   text-decoration: none;
-  transition: color 160ms ease;
+  transition: color 160ms var(--ease-out);
   position: relative;
   padding-bottom: 3px;
 }
@@ -102,7 +102,7 @@ nav.scrolled {
   padding: 10px 24px;
   text-decoration: none;
   font-weight: 500;
-  transition: background 160ms ease, transform 120ms var(--ease-out);
+  transition: background 160ms var(--ease-out), transform 120ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
   .nav-cta:hover { background: var(--gold); }
@@ -204,7 +204,7 @@ nav.scrolled {
   text-transform: uppercase;
   padding: 14px 32px;
   text-decoration: none;
-  transition: background 160ms ease, transform 120ms var(--ease-out);
+  transition: background 160ms var(--ease-out), transform 120ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover { background: var(--gold-light); }
@@ -221,7 +221,7 @@ nav.scrolled {
   text-decoration: none;
   border-bottom: 1px solid oklch(85% 0.008 75 / 0.3);
   padding-bottom: 2px;
-  transition: color 160ms ease, border-color 160ms ease;
+  transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
   .btn-ghost:hover { color: var(--gold-light); border-color: var(--gold-light); }
@@ -450,7 +450,7 @@ nav.scrolled {
   text-transform: uppercase;
   padding: 13px 32px;
   text-decoration: none;
-  transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 120ms var(--ease-out);
+  transition: background 160ms var(--ease-out), color 160ms var(--ease-out), border-color 160ms var(--ease-out), transform 120ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
   .btn-outline:hover {
@@ -668,7 +668,6 @@ nav.scrolled {
   padding: 16px 32px;
   cursor: pointer;
   align-self: flex-start;
-  transition: background 0.2s;
 }
 .form-submit:hover { background: oklch(22% 0.015 60); }
 
@@ -708,7 +707,7 @@ footer {
   color: oklch(55% 0.008 75);
   line-height: 1.9;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 160ms var(--ease-out);
 }
 .footer-col a:hover { color: var(--gold-light); }
 .footer-bottom {
@@ -727,7 +726,7 @@ footer {
   font-size: 0.75rem;
   color: oklch(50% 0.008 75);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 160ms var(--ease-out);
 }
 .footer-ig:hover { color: var(--gold-light); }
 .footer-ig svg { width: 16px; height: 16px; fill: currentColor; }
@@ -762,9 +761,31 @@ footer {
 }
 
 .form-submit {
-  transition: background 160ms ease, transform 120ms var(--ease-out);
+  transition: background 160ms var(--ease-out), transform 120ms var(--ease-out);
 }
 .form-submit:active { transform: scale(0.98); }
+
+/* ─── FOCUS VISIBLE ─── */
+.nav-links a:focus-visible,
+.nav-cta:focus-visible,
+.btn-primary:focus-visible,
+.btn-ghost:focus-visible,
+.btn-outline:focus-visible,
+.menu-card:focus-visible,
+.hamburger:focus-visible,
+.mobile-menu a:focus-visible,
+.mobile-menu-close:focus-visible,
+.mobile-menu-cta:focus-visible,
+.footer-col a:focus-visible,
+.footer-ig:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.form-submit:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
 
 /* ─── REDUCED MOTION ─── */
 /* ─── HAMBURGER MENU ─── */
