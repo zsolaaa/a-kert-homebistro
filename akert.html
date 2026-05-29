@@ -868,11 +868,13 @@ footer {
   .mobile-menu { display: flex; }
 
   /* Hero */
-  #hero { grid-template-columns: 1fr; }
+  #hero { grid-template-columns: 1fr; grid-template-rows: 38vh 1fr; }
   .nav-logo img { height: 52px; }
-  .hero-left { padding: 96px 28px 48px; justify-content: center; min-height: 60vh; }
-  .hero-right { height: 40vh; }
-  .hero-eyebrow { font-size: 0.65rem; margin-bottom: 12px; }
+  .hero-right { order: -1; height: 38vh; }
+  .hero-left { padding: 36px 28px 48px; justify-content: flex-start; min-height: auto; }
+  .hero-eyebrow { display: none; }
+  .hero-title { font-size: clamp(2rem, 9vw, 2.8rem); margin-bottom: 16px; }
+  .hero-sub { font-size: 0.88rem; margin-bottom: 28px; }
   .hero-title { font-size: clamp(2.4rem, 10vw, 3.2rem); }
   .hero-sub { font-size: 0.9rem; }
   .hero-actions { flex-direction: column; align-items: flex-start; gap: 14px; }
