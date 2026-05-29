@@ -373,6 +373,16 @@ nav.scrolled {
   gap: 2px;
   margin-bottom: 48px;
 }
+/* Kiemelt wide card */
+.menu-card.featured {
+  grid-column: span 2;
+  aspect-ratio: 16/9;
+}
+/* Full-width bottom card */
+.menu-card.full {
+  grid-column: span 3;
+  aspect-ratio: 21/9;
+}
 .menu-card {
   position: relative;
   overflow: hidden;
@@ -920,6 +930,7 @@ footer {
   .section-header { margin-bottom: 40px; }
   .menu-grid { grid-template-columns: 1fr; gap: 2px; }
   .menu-card { aspect-ratio: 4/3; }
+  .menu-card.featured, .menu-card.full { grid-column: span 1; aspect-ratio: 4/3; }
   /* Show overlay on mobile (no hover) */
   .menu-card-overlay { opacity: 1; }
   .menu-card-text { opacity: 1; transform: translateY(0); }
@@ -1055,7 +1066,7 @@ footer {
   </div>
 
   <div class="menu-grid">
-    <div class="menu-card reveal">
+    <div class="menu-card reveal" data-pos="1">
       <img id="etel1-img" src="" alt="Főfogás">
       <div class="menu-card-overlay"></div>
       <div class="menu-card-text">
@@ -1079,7 +1090,7 @@ footer {
         <span class="menu-card-desc">Friss, helyi alapanyagokból, naponta változó</span>
       </div>
     </div>
-    <div class="menu-card reveal reveal-delay-3">
+    <div class="menu-card featured reveal reveal-delay-3">
       <img id="etel4-img" src="" alt="Fogás">
       <div class="menu-card-overlay"></div>
       <div class="menu-card-text">
@@ -1095,8 +1106,8 @@ footer {
         <span class="menu-card-desc">Mindig friss, mindig meglepetés</span>
       </div>
     </div>
-    <div class="menu-card reveal reveal-delay-1">
-      <img id="etel6-img" src="" alt="Fogás">
+    <div class="menu-card full reveal reveal-delay-1">
+      <img id="etel6-img" src="" alt="Fogás" style="object-position: center 40%;">
       <div class="menu-card-overlay"></div>
       <div class="menu-card-text">
         <span class="menu-card-name">Kézműves desszert</span>
