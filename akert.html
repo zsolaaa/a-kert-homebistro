@@ -774,10 +774,12 @@ footer {
   width: 40px;
   height: 40px;
   cursor: pointer;
-  background: none;
+  background: oklch(13% 0.015 60 / 0.45);
   border: none;
   padding: 4px;
   z-index: 200;
+  backdrop-filter: blur(6px);
+  border-radius: 4px;
 }
 .hamburger span {
   display: block;
