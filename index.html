@@ -710,6 +710,78 @@ footer {
 .form-submit:active { transform: scale(0.98); }
 
 /* ─── REDUCED MOTION ─── */
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .hero-content { padding: 0 40px 60px; }
+  .hero-scroll { right: 40px; }
+  #intro { padding: 24px 24px; gap: 24px; flex-wrap: wrap; }
+  .intro-sep { display: none; }
+  #about { grid-template-columns: 1fr; min-height: auto; }
+  .about-image { height: 320px; }
+  .about-content { padding: 56px 40px; }
+  #menu { padding: 72px 40px; }
+  .menu-grid { grid-template-columns: 1fr 1fr; }
+  .menu-card.wide { grid-column: span 2; }
+  #ethos { grid-template-columns: 1fr; padding: 72px 40px; gap: 40px; }
+  .ethos-sep { display: none; }
+  #gallery { height: 260px; }
+  #foglal { grid-template-columns: 1fr; padding: 72px 40px; gap: 48px; }
+  footer .footer-top { padding: 56px 40px 40px; }
+  .footer-cols { flex-wrap: wrap; gap: 40px; }
+  footer .footer-bottom { padding: 24px 40px; }
+}
+
+@media (max-width: 640px) {
+  /* Nav — hamburger */
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  .nav-cta { padding: 8px 18px; font-size: 0.72rem; }
+
+  /* Hero */
+  .hero-content { padding: 0 24px 56px; }
+  .hero-title { font-size: clamp(2.4rem, 10vw, 3.2rem); }
+  .hero-sub { font-size: 0.9rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .hero-scroll { display: none; }
+
+  /* Intro strip */
+  #intro { flex-direction: column; gap: 20px; padding: 28px 24px; }
+  .intro-sep { display: none; }
+
+  /* About */
+  .about-image { height: 260px; }
+  .about-content { padding: 40px 24px; }
+  .section-title { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+
+  /* Menu */
+  #menu { padding: 56px 24px; }
+  .section-header { margin-bottom: 40px; }
+  .menu-grid { grid-template-columns: 1fr; gap: 2px; }
+  .menu-card.wide { grid-column: span 1; min-height: 280px; }
+  .menu-card { aspect-ratio: 4/3; }
+  /* Show overlay on mobile (no hover) */
+  .menu-card-overlay { opacity: 1; }
+  .menu-card-text { opacity: 1; transform: translateY(0); }
+
+  /* Ethos */
+  #ethos { padding: 56px 24px; gap: 32px; }
+  .ethos-item { padding: 0; }
+
+  /* Gallery */
+  #gallery { flex-direction: column; height: auto; }
+  .gallery-item { height: 180px; flex: none; }
+
+  /* Foglalás */
+  #foglal { padding: 56px 24px; gap: 40px; }
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Footer */
+  footer .footer-top { padding: 48px 24px 32px; flex-direction: column; gap: 32px; }
+  .footer-cols { flex-direction: column; gap: 28px; }
+  footer .footer-bottom { padding: 20px 24px; flex-direction: column; gap: 12px; text-align: center; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 0;
