@@ -428,12 +428,7 @@ nav.scrolled {
   line-height: 1.5;
 }
 
-/* Wide card for hero dish */
-.menu-card.wide {
-  grid-column: span 2;
-  aspect-ratio: auto;
-  min-height: 340px;
-}
+
 
 .menu-cta-wrap {
   text-align: center;
@@ -880,7 +875,6 @@ footer {
   .about-content { padding: 56px 40px; }
   #menu { padding: 72px 40px; }
   .menu-grid { grid-template-columns: 1fr 1fr; }
-  .menu-card.wide { grid-column: span 2; }
   #ethos { grid-template-columns: 1fr; padding: 72px 40px; gap: 40px; }
   .ethos-sep { display: none; }
   #gallery { height: 260px; }
@@ -925,7 +919,6 @@ footer {
   #menu { padding: 56px 24px; }
   .section-header { margin-bottom: 40px; }
   .menu-grid { grid-template-columns: 1fr; gap: 2px; }
-  .menu-card.wide { grid-column: span 1; min-height: 280px; }
   .menu-card { aspect-ratio: 4/3; }
   /* Show overlay on mobile (no hover) */
   .menu-card-overlay { opacity: 1; }
@@ -1062,7 +1055,7 @@ footer {
   </div>
 
   <div class="menu-grid">
-    <div class="menu-card wide reveal">
+    <div class="menu-card reveal">
       <img id="etel1-img" src="" alt="Főfogás">
       <div class="menu-card-overlay"></div>
       <div class="menu-card-text">
