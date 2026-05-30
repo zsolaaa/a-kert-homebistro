@@ -74,7 +74,7 @@ nav.scrolled {
   text-transform: uppercase;
   color: oklch(90% 0.01 75);
   text-decoration: none;
-  transition: color 160ms ease;
+  transition: color 160ms var(--ease-out);
   position: relative;
   padding-bottom: 3px;
 }
@@ -102,7 +102,7 @@ nav.scrolled {
   padding: 10px 24px;
   text-decoration: none;
   font-weight: 500;
-  transition: background 160ms ease, transform 120ms var(--ease-out);
+  transition: background 160ms var(--ease-out), transform 120ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
   .nav-cta:hover { background: var(--gold); }
@@ -204,7 +204,7 @@ nav.scrolled {
   text-transform: uppercase;
   padding: 14px 32px;
   text-decoration: none;
-  transition: background 160ms ease, transform 120ms var(--ease-out);
+  transition: background 160ms var(--ease-out), transform 120ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover { background: var(--gold-light); }
@@ -221,7 +221,7 @@ nav.scrolled {
   text-decoration: none;
   border-bottom: 1px solid oklch(85% 0.008 75 / 0.3);
   padding-bottom: 2px;
-  transition: color 160ms ease, border-color 160ms ease;
+  transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
   .btn-ghost:hover { color: var(--gold-light); border-color: var(--gold-light); }
@@ -285,10 +285,10 @@ nav.scrolled {
 /* ─── ABOUT ─── */
 #about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.72fr 1fr;
   min-height: auto;
-  max-height: 560px;
-  height: 560px;
+  max-height: 720px;
+  height: 720px;
 }
 .about-image {
   position: relative;
@@ -298,7 +298,7 @@ nav.scrolled {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 50%;
   display: block;
   filter: saturate(0.9);
   clip-path: inset(0 100% 0 0);
@@ -450,7 +450,7 @@ nav.scrolled {
   text-transform: uppercase;
   padding: 13px 32px;
   text-decoration: none;
-  transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 120ms var(--ease-out);
+  transition: background 160ms var(--ease-out), color 160ms var(--ease-out), border-color 160ms var(--ease-out), transform 120ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
   .btn-outline:hover {
@@ -580,6 +580,66 @@ nav.scrolled {
   color: var(--gold);
 }
 
+/* ─── VENDÉGVÉLEMÉNYEK ─── */
+#reviews {
+  background: var(--cream);
+  padding: 96px 80px;
+}
+.reviews-masonry {
+  columns: 3;
+  column-gap: 24px;
+  max-width: 1180px;
+  margin: 56px auto 0;
+}
+.review {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  padding: 28px 28px 24px;
+  background: var(--cream-warm);
+  border: 1px solid oklch(72% 0.07 68 / 0.18);
+}
+.review-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  line-height: 0.5;
+  color: var(--gold);
+  opacity: 0.4;
+  display: block;
+  margin-bottom: 14px;
+}
+.review-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.review-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+.review-name {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 500;
+}
+
 @media (max-width: 640px) {
   #chef-quote { padding: 56px 24px; }
 }
@@ -668,7 +728,6 @@ nav.scrolled {
   padding: 16px 32px;
   cursor: pointer;
   align-self: flex-start;
-  transition: background 0.2s;
 }
 .form-submit:hover { background: oklch(22% 0.015 60); }
 
@@ -708,7 +767,7 @@ footer {
   color: oklch(55% 0.008 75);
   line-height: 1.9;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 160ms var(--ease-out);
 }
 .footer-col a:hover { color: var(--gold-light); }
 .footer-bottom {
@@ -727,7 +786,7 @@ footer {
   font-size: 0.75rem;
   color: oklch(50% 0.008 75);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 160ms var(--ease-out);
 }
 .footer-ig:hover { color: var(--gold-light); }
 .footer-ig svg { width: 16px; height: 16px; fill: currentColor; }
@@ -762,9 +821,31 @@ footer {
 }
 
 .form-submit {
-  transition: background 160ms ease, transform 120ms var(--ease-out);
+  transition: background 160ms var(--ease-out), transform 120ms var(--ease-out);
 }
 .form-submit:active { transform: scale(0.98); }
+
+/* ─── FOCUS VISIBLE ─── */
+.nav-links a:focus-visible,
+.nav-cta:focus-visible,
+.btn-primary:focus-visible,
+.btn-ghost:focus-visible,
+.btn-outline:focus-visible,
+.menu-card:focus-visible,
+.hamburger:focus-visible,
+.mobile-menu a:focus-visible,
+.mobile-menu-close:focus-visible,
+.mobile-menu-cta:focus-visible,
+.footer-col a:focus-visible,
+.footer-ig:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.form-submit:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
 
 /* ─── REDUCED MOTION ─── */
 /* ─── HAMBURGER MENU ─── */
@@ -877,11 +958,13 @@ footer {
   .hero-scroll { left: 40px !important; }
   #intro { padding: 24px 24px; gap: 24px; flex-wrap: wrap; }
   .intro-sep { display: none; }
-  #about { grid-template-columns: 1fr; min-height: auto; }
+  #about { grid-template-columns: 1fr; min-height: auto; height: auto; max-height: none; }
   .about-image { height: 320px; }
   .about-content { padding: 56px 40px; }
   #menu { padding: 72px 40px; }
   .menu-grid { grid-template-columns: 1fr 1fr; }
+  #reviews { padding: 72px 40px; }
+  .reviews-masonry { columns: 2; }
   #ethos { grid-template-columns: 1fr; padding: 72px 40px; gap: 40px; }
   .ethos-sep { display: none; }
   #gallery { height: 260px; }
@@ -918,7 +1001,8 @@ footer {
   .intro-sep { display: none; }
 
   /* About */
-  .about-image { height: 260px; }
+  .about-image { height: 340px; }
+  .about-image img { object-position: center 22%; }
   .about-content { padding: 40px 24px; }
   .section-title { font-size: clamp(1.7rem, 7vw, 2.2rem); }
 
@@ -936,6 +1020,10 @@ footer {
   /* Ethos */
   #ethos { padding: 56px 24px; gap: 32px; }
   .ethos-item { padding: 0; }
+
+  /* Vélemények */
+  #reviews { padding: 56px 24px; }
+  .reviews-masonry { columns: 1; }
 
   /* Gallery */
   #gallery { flex-direction: column; height: auto; }
@@ -1038,24 +1126,6 @@ footer {
 </div>
 
 <!-- ABOUT -->
-<section id="about">
-  <div class="about-image">
-    <img id="csapat-img" src="" alt="A Kert csapata">
-  </div>
-  <div class="about-content">
-    <span class="section-label reveal">A mi történetünk</span>
-    <h2 class="section-title reveal reveal-delay-1">Egy páros,<br>egy <em>szenvedély</em>,<br>egy konyha.</h2>
-    <p class="about-text reveal reveal-delay-2">A Kert Homebistro nem egy étterem a szokásos értelemben. Egy fiatal pár álma, ahol a házi főzés eleganciával találkozik — ahol minden fogást úgy készítünk, mintha a legközelebbi vendégünknek tálalnánk.</p>
-    <p class="about-text reveal reveal-delay-2" style="margin-bottom: 32px;">Helyi termelőktől, szezonális alapanyagokból, szeretettel.</p>
-    <div class="about-tags reveal reveal-delay-3">
-      <span class="tag">Szezonális konyha</span>
-      <span class="tag">Helyi alapanyagok</span>
-      <span class="tag">Házias receptek</span>
-      <span class="tag">Modern tálalás</span>
-    </div>
-  </div>
-</section>
-
 <!-- MENU HIGHLIGHT -->
 <section id="menu">
   <div class="section-header reveal">
@@ -1112,6 +1182,36 @@ footer {
   </div>
 </section>
 
+<!-- RÓLUNK -->
+<section id="about">
+  <div class="about-image">
+    <img id="csapat-img" src="" alt="A Kert csapata">
+  </div>
+  <div class="about-content">
+    <span class="section-label reveal">A mi történetünk</span>
+    <h2 class="section-title reveal reveal-delay-1">Egy páros,<br>egy <em>szenvedély</em>,<br>egy konyha.</h2>
+    <p class="about-text reveal reveal-delay-2">A Kert Homebistro nem egy étterem a szokásos értelemben. Egy fiatal pár álma, ahol a házi főzés eleganciával találkozik — ahol minden fogást úgy készítünk, mintha a legközelebbi vendégünknek tálalnánk.</p>
+    <p class="about-text reveal reveal-delay-2" style="margin-bottom: 32px;">Helyi termelőktől, szezonális alapanyagokból, szeretettel.</p>
+    <div class="about-tags reveal reveal-delay-3">
+      <span class="tag">Szezonális konyha</span>
+      <span class="tag">Helyi alapanyagok</span>
+      <span class="tag">Házias receptek</span>
+      <span class="tag">Modern tálalás</span>
+    </div>
+  </div>
+</section>
+
+<!-- CHEF QUOTE -->
+<section id="chef-quote">
+  <div class="chef-quote-inner reveal">
+    <span class="chef-quote-mark">"</span>
+    <p class="chef-quote-text">A vendéglátás nálam figyelem, tisztelet és valódi élmény. Az ételeimben az alapanyagok tisztasága és az ízek egyensúlya kap főszerepet.</p>
+    <div class="chef-quote-author">
+      <span class="chef-quote-name">Somogyi Máté</span>
+    </div>
+  </div>
+</section>
+
 <!-- ETHOS -->
 <section id="ethos">
   <div class="ethos-item reveal">
@@ -1131,13 +1231,68 @@ footer {
   </div>
 </section>
 
-<!-- CHEF QUOTE -->
-<section id="chef-quote">
-  <div class="chef-quote-inner reveal">
-    <span class="chef-quote-mark">"</span>
-    <p class="chef-quote-text">A vendéglátás nálam figyelem, tisztelet és valódi élmény. Az ételeimben az alapanyagok tisztasága és az ízek egyensúlya kap főszerepet.</p>
-    <div class="chef-quote-author">
-      <span class="chef-quote-name">Somogyi Máté</span>
+<!-- VENDÉGVÉLEMÉNYEK -->
+<section id="reviews">
+  <div class="section-header reveal">
+    <span class="section-label">Vendégvélemények</span>
+    <h2 class="section-title">Amit a vendégeink<br><em>mondanak rólunk</em></h2>
+  </div>
+  <div class="reviews-masonry">
+    <div class="review">
+      <span class="review-quote">"</span>
+      <p class="review-text">A Kert Homebistro egy letisztult, tiszta és hangulatos hely, ahová mindig szívesen térek vissza. Az ételek nagyon ízletesek, tiszták az ízek, a tálalás pedig gyönyörű és modern.😍 A választék változatos, mindig találok valami újdonságot. A kiszolgálás kedves és figyelmes, az árak pedig teljesen megfizethetőek. A poharak, tányérok és evőeszközök mindig tiszták – minden apróságra odafigyelnek. Öröm ide járni! 🫶🏾❤️ Köszönöm a mindig elképesztően finom ételeket!🥰</p>
+      <div class="review-author">
+        <span class="review-avatar">M</span>
+        <span class="review-name">Melitta Sebők</span>
+      </div>
+    </div>
+    <div class="review">
+      <span class="review-quote">"</span>
+      <p class="review-text">Finom ételek, kedves és gyors kiszolgálás!! Gratulálunk a séfnek és a csapatnak!</p>
+      <div class="review-author">
+        <span class="review-avatar">R</span>
+        <span class="review-name">Róbertné Nelly Rudolf</span>
+      </div>
+    </div>
+    <div class="review">
+      <span class="review-quote">"</span>
+      <p class="review-text">Egy átutazós évfordulós vacsorára kerestünk helyet és a lehető legjobbat sikerült megtalálni. Az ételek fantasztikusan finomak és adagra is tökéletesek voltak. Életem egyik legfinomabb kacsáját sikerült elfogyasztani. A hely bár nem nagy, de annál barátibb. Tökéletes választás egy randira vagy csak egy finom ebédhez/vacsorához. A távolság (~200km) miatt nem leszek törzsvendég, de nagyon remélem, hogy még kipróbálhatok más ételeket és ízeket is a jövőben.</p>
+      <div class="review-author">
+        <span class="review-avatar">A</span>
+        <span class="review-name">Andor Osztrogonácz</span>
+      </div>
+    </div>
+    <div class="review">
+      <span class="review-quote">"</span>
+      <p class="review-text">Minőségi ételek, kedves kiszolgálás.</p>
+      <div class="review-author">
+        <span class="review-avatar">S</span>
+        <span class="review-name">Szabi Szabó</span>
+      </div>
+    </div>
+    <div class="review">
+      <span class="review-quote">"</span>
+      <p class="review-text">Itt mindig finom ételeket kapsz, különleges, friss, szezonális alapanyagokból. Rendszeresen megújuló étlappal, kedves kiszolgálással várnak. Ha finomat szeretnél enni jó áron, akkor mindenképp próbáld ki! Nem fogsz csalódni! Betti és Máté mindent elkövetnek, hogy csak jó élményekkel távozz!</p>
+      <div class="review-author">
+        <span class="review-avatar">Z</span>
+        <span class="review-name">Zsófia Király</span>
+      </div>
+    </div>
+    <div class="review">
+      <span class="review-quote">"</span>
+      <p class="review-text">Eszméletlen finom minden! 🤩</p>
+      <div class="review-author">
+        <span class="review-avatar">I</span>
+        <span class="review-name">Ikotity Edit</span>
+      </div>
+    </div>
+    <div class="review">
+      <span class="review-quote">"</span>
+      <p class="review-text">Kellemes környezetben, látványos és finom ételek, barátságos kiszolgálás. Ilyen finom tengergyümölcsös tésztát utoljára Rómában ettem! Környezettudatos cég (a Munch appon is fent vannak). Csak ajánlani tudom! 100% ❣️♥️ És a brazil limonádé is isteni 😊</p>
+      <div class="review-author">
+        <span class="review-avatar">L</span>
+        <span class="review-name">Luca Bártfai</span>
+      </div>
     </div>
   </div>
 </section>
